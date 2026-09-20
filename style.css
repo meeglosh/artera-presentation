@@ -72,3 +72,20 @@ body.motion-off .model-stage canvas{display:none}body.motion-off .model-stage .m
 
 @media(min-width:1000px) and (max-height:820px){.presenting .narrative-stage{padding-top:24px}.presenting .narrative-stage .section-top{padding-bottom:16px}.presenting .narrative-stage h2{font-size:44px}.presenting .resolution-row{padding:11px 0}.presenting .resolution-head{margin-top:16px}.presenting .narrative-bottom{margin-top:14px}}
 @media screen and (max-width:600px){.report-paper{height:auto}.report-block{position:relative;left:auto;right:auto;top:auto;height:auto;margin-top:12px}.report-result{min-height:150px}.report-meaning,.report-evidence{min-height:105px}}
+/* Active report emphasis follows the question being discussed. */
+.narrative-live #clinical .report-block{background:#edf4f7;color:#0b2545;border-color:#d1dfe7;box-shadow:none}
+.narrative-live #clinical[data-narrative-step="1"] .report-result,
+.narrative-live #clinical[data-narrative-step="2"] .report-meaning,
+.narrative-live #clinical[data-narrative-step="3"] .report-evidence{background:#0c66d0;color:#fff;border-color:#0c66d0;box-shadow:0 12px 28px #0c66d022}
+.council-diagram{isolation:isolate}.council-connections{position:absolute;inset:0;width:100%;height:100%;z-index:-1;overflow:visible}.council-connections path{fill:none;stroke:#76a4cb;stroke-width:1;stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--council-p,1))}
+.narrative-live .council-reveal .role-design{transform:translate(-50%,calc(-40px * (1 - var(--council-p))))}
+.narrative-live .council-reveal .role-tech{transform:translateX(calc(45px * (1 - var(--council-p))))}
+.narrative-live .council-reveal .role-access{transform:translateX(calc(-45px * (1 - var(--council-p))))}
+.narrative-live .council-reveal .role-research{transform:translate(-50%,calc(35px * (1 - var(--council-p))))}
+.narrative-live .council-reveal .council-center{box-shadow:0 0 0 calc(18px * var(--council-p)) #0c66d012}
+.narrative-live .council-reveal .kooth-actions>div{transform:translateX(calc(35px * (1 - var(--council-p))));border-left:2px solid rgb(12 102 208 / var(--council-p));padding-left:18px}
+.roadmap-progress{height:3px;background:#c4d4df;margin-top:32px;overflow:hidden}.roadmap-progress span{display:block;height:100%;background:#0c66d0;transform-origin:left;transform:scaleX(calc(.3333 + var(--path,1)*.6667));transition:transform .6s var(--ease)}
+.roadmap-controls{margin-top:22px}.narrative-live #roadmap{height:170vh!important}.narrative-live .roadmap-rows>div{padding-left:20px;padding-right:20px;transition:background .45s,color .45s,transform .45s;border-left:3px solid transparent}.narrative-live .roadmap-rows>div.current{background:#0c66d0;color:white;border-left-color:#0b2545;transform:translateX(8px)}
+.narrative-live .roadmap-rows>div.current :is(.period,p,strong){color:white}.narrative-live .roadmap .footnote{margin-top:18px}
+@media(min-width:1000px) and (max-height:820px){.narrative-stage .roadmap-rows>div{padding-top:19px;padding-bottom:19px}.roadmap-progress{margin-top:20px}.roadmap-controls{margin-top:15px}.roadmap .narrative-stage .footnote{font-size:10px}}
+@media print{.kooth-actions>div{transform:none!important}.role-design,.role-research{transform:translateX(-50%)!important}.council-connections path{stroke-dashoffset:0!important}.roadmap-progress span{transform:none!important}.roadmap-progress{margin-top:22px}.roadmap .narrative-stage .roadmap-rows>div{padding-top:25px;padding-bottom:25px}}

@@ -1,0 +1,7 @@
+Clarity that scales. Presentation by Mike Jerugim, prepared for Artera.
+Sora font: Copyright The Sora Project Authors. SIL Open Font License; see Sora-LICENSE.txt.
+Onix Storybook screenshots: Mike Jerugim / flat7.design/onix/.
+Soluna practitioner design: Mike Jerugim / flat7.design/soluna/.
+Pathology slide: original Blender model and rendering created for this presentation. Illustrative, non-diagnostic specimen geometry.
+Three.js: MIT license, bundled license notices included in scene.js.
+Artera name belongs to its owner. This is an interview presentation, not an official Artera product.

@@ -5,6 +5,7 @@ const reduced=matchMedia('(prefers-reduced-motion:reduce)');
 const clamp=n=>Math.max(0,Math.min(1,n));
 let enabled=false,scheduled=false;
 function setState(act,step,progress){
+ if(act.dataset.narrative==='workflow' && act.dataset.narrativeStep!==String(step))window.updateWorkflow?.(step);
  act.dataset.narrativeStep=step;
  act.style.setProperty('--assembly',(act.dataset.narrative==='clinical'?step/3:clamp(progress/.82)).toFixed(4));
  act.style.setProperty('--path',(step/(+(act.dataset.stepCount||4)-1)).toFixed(4));
@@ -16,7 +17,7 @@ function setState(act,step,progress){
  act.querySelectorAll('[data-report-step]').forEach(e=>e.classList.toggle('current',+e.dataset.reportStep===step));
  act.querySelectorAll('[data-lifecycle-step]').forEach(e=>e.classList.toggle('current',+e.dataset.lifecycleStep===step));
 }
-function render(){scheduled=false;const council=document.querySelector("#kooth");const cp=enabled?clamp((innerHeight*.75-council.getBoundingClientRect().top)/(innerHeight*.8)):1;council.style.setProperty("--council-p",cp.toFixed(4));council.dataset.scVerifyState=cp.toFixed(4);for(const act of acts){const r=act.getBoundingClientRect();const p=enabled?clamp(-r.top/Math.max(1,act.offsetHeight-innerHeight)):1;const step=Math.min(+(act.dataset.stepCount||4)-1,Math.floor(p*+(act.dataset.stepCount||4)));setState(act,step,p)}}
+function render(){scheduled=false;const council=document.querySelector("#kooth");const cp=enabled?clamp((innerHeight*.75-council.getBoundingClientRect().top)/(innerHeight*.8)):1;council.style.setProperty("--council-p",cp.toFixed(4));council.dataset.scVerifyState=cp.toFixed(4);for(const act of acts){const r=act.getBoundingClientRect();const p=enabled?clamp(-r.top/Math.max(1,act.offsetHeight-innerHeight)):1;const step=Math.min(+(act.dataset.stepCount||4)-1,Math.floor(p*+(act.dataset.stepCount||4)));if(enabled||act.dataset.narrative!=='workflow')setState(act,step,p)}}
 function queue(){if(!scheduled){scheduled=true;requestAnimationFrame(render)}}
 function configure(){enabled=wide.matches&&!reduced.matches&&!document.body.classList.contains('motion-off');document.body.classList.toggle('narrative-live',enabled);window.presentationScroll?.layout();render();}
 function select(act,step){const progress=(step+.5)/+(act.dataset.stepCount||4);setState(act,step,progress);if(enabled){const top=act.getBoundingClientRect().top+scrollY;scrollTo({top:top+progress*(act.offsetHeight-innerHeight),behavior:'instant'})}}

@@ -78,10 +78,10 @@ body.motion-off .model-stage canvas{display:none}body.motion-off .model-stage .m
 .narrative-live #clinical[data-narrative-step="2"] .report-meaning,
 .narrative-live #clinical[data-narrative-step="3"] .report-evidence{background:#0c66d0;color:#fff;border-color:#0c66d0;box-shadow:0 12px 28px #0c66d022}
 .council-diagram{isolation:isolate}.council-connections{position:absolute;inset:0;width:100%;height:100%;z-index:-1;overflow:visible}.council-connections path{fill:none;stroke:#76a4cb;stroke-width:1;stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--council-p,1))}
-.narrative-live .council-reveal .role-design{transform:translate(-50%,calc(-40px * (1 - var(--council-p))))}
+.narrative-live .council-reveal .role-design{transform:translate(-50%,calc(30px * (1 - var(--council-p))))}
 .narrative-live .council-reveal .role-tech{transform:translateX(calc(45px * (1 - var(--council-p))))}
 .narrative-live .council-reveal .role-access{transform:translateX(calc(-45px * (1 - var(--council-p))))}
-.narrative-live .council-reveal .role-research{transform:translate(-50%,calc(35px * (1 - var(--council-p))))}
+.narrative-live .council-reveal .role-research{transform:translate(-50%,calc(-25px * (1 - var(--council-p))))}
 .narrative-live .council-reveal .council-center{box-shadow:0 0 0 calc(18px * var(--council-p)) #0c66d012}
 .narrative-live .council-reveal .kooth-actions>div{transform:translateX(calc(35px * (1 - var(--council-p))));border-left:2px solid rgb(12 102 208 / var(--council-p));padding-left:18px}
 .roadmap-progress{height:3px;background:#c4d4df;margin-top:32px;overflow:hidden}.roadmap-progress span{display:block;height:100%;background:#0c66d0;transform-origin:left;transform:scaleX(calc(.3333 + var(--path,1)*.6667));transition:transform .6s var(--ease)}

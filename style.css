@@ -99,3 +99,35 @@ body.motion-off .model-stage canvas{display:none}body.motion-off .model-stage .m
 .narrative-live #workflows .workflow-map button{transition:background .35s,color .35s,border-color .35s}
 @media screen and (min-width:1000px) and (max-height:800px){.narrative-live #workflows .narrative-stage{padding-top:30px}.narrative-live #workflows .section-top{padding-bottom:18px}.narrative-live #workflows h2{font-size:44px}.narrative-live #workflows .lead{font-size:17px;margin-top:16px}.narrative-live #workflows .workflow-map{margin-top:20px}.narrative-live #workflows .workflow-map button{min-height:100px}.narrative-live #workflows .three-lines{margin-top:20px}}
 @media print{.narrative-live #workflows{height:9.375in!important}}
+
+/* Held speaking beats, shared by scrolling and presentation arrow keys. */
+.narrative-live .focus-act{height:250vh!important}
+.narrative-live #value.focus-act{height:300vh!important}
+.focus-controls{margin-top:22px}
+.narrative-live .focus-act [data-focus-step]{padding:18px 20px;border-left:3px solid transparent;transition:background .35s,color .35s,border-color .35s}
+.narrative-live .focus-act [data-focus-step].current{background:#0c66d0;color:#fff;border-left-color:#073768}
+.narrative-live .focus-act [data-focus-step].current :is(p,h3,b,strong,span){color:#fff}
+.narrative-live #kooth .kooth-actions>div{transform:none}
+.narrative-live #adoption .adoption-path{gap:20px}
+.narrative-live #adoption .path-node{margin-bottom:15px}
+.narrative-live #adoption .current .path-node{background:white;border-color:white}
+.narrative-live #value .roi{margin-top:20px}
+@media screen and (min-width:1000px) and (max-height:820px){
+ .focus-act .narrative-stage{padding-top:28px;padding-bottom:90px}
+ .focus-act .narrative-stage h2{font-size:44px}
+ .focus-act .narrative-stage .section-top{padding-bottom:20px}
+ .focus-act .localization-layout{gap:45px}
+ .focus-act .wide-statement{margin-top:25px;font-size:28px}
+ .focus-act .kooth-grid{margin-top:22px}
+ .focus-act .council-diagram{height:250px}
+ .narrative-live .focus-act [data-focus-step]{padding:12px 16px}
+ .focus-act .committee-line{margin-top:12px}
+ .focus-act .adoption-path{margin-top:30px}
+ .focus-act .adoption-bottom{margin-top:25px}
+ .focus-act .metrics-table{margin-top:22px}
+ .focus-act .metric-row h3{font-size:22px}
+ .focus-act .metric-row p,.focus-act .roi p{font-size:13px}
+ .focus-act .roi strong{font-size:18px}
+ .focus-controls{margin-top:16px}
+}
+@media print{.narrative-live .focus-act,.narrative-live #value.focus-act{height:9.375in!important}.focus-act [data-focus-step]{background:transparent!important;color:inherit!important;border-left:0!important}}

@@ -6,6 +6,7 @@ const clamp=n=>Math.max(0,Math.min(1,n));
 let enabled=false,scheduled=false;
 function setState(act,step,progress){
  if(act.dataset.narrative==='workflow' && act.dataset.narrativeStep!==String(step))window.updateWorkflow?.(step);
+ act.querySelectorAll('[data-focus-step]').forEach(e=>e.classList.toggle('current',+e.dataset.focusStep===step));
  act.dataset.narrativeStep=step;
  act.style.setProperty('--assembly',(act.dataset.narrative==='clinical'?step/3:clamp(progress/.82)).toFixed(4));
  act.style.setProperty('--path',(step/(+(act.dataset.stepCount||4)-1)).toFixed(4));

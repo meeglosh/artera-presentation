@@ -364,3 +364,5 @@ body.motion-off .model-stage canvas{display:none}body.motion-off .model-stage .m
 @media(max-width:600px){#kooth .council-diagram{--council-radius:28cqw}#kooth .council-orbit,#kooth .council-connections{width:56%}}
 #thanks .thanks-message{display:block;font-style:normal}
 #thanks .thanks-question{display:block;font-style:italic;font-size:.72em;margin-top:.4em}
+#system .token-proof{margin-top:22px;font-size:13px;line-height:1.6;color:var(--muted);max-width:34ch}
+#system .token-proof a{display:inline-block;margin-top:8px;font-size:11px}

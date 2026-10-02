@@ -170,3 +170,197 @@ body.motion-off .model-stage canvas{display:none}body.motion-off .model-stage .m
 .audit-model>img{transform:translateY(-12px) scale(1.2)}
 .architecture .model-stage{inset:-8% -5% 26% -5%}
 .audit-model>canvas,.audit-model>img{pointer-events:none}
+
+/* A quiet speaking pause between professional context and the foundation chapter. */
+.personal-chapter{min-height:100svh;display:grid;place-items:center;padding:64px var(--gutter);text-align:center;background:#0b2545}
+.personal-chapter h2{font-style:italic;font-family:var(--sc-font-display);font-size:clamp(34px,3.3vw,48px);line-height:1.12;letter-spacing:-.055em;font-weight:400;max-width:19ch;margin:0}
+
+@media(min-width:1000px) and (max-height:800px){.personal-chapter h2{font-size:32px}}
+/* Swap the audit method for its outcome in a shared, stable text area. */
+#q11 .audit-panels{display:grid;align-items:start}
+#q11 .audit-panels>.audit-method,#q11 .audit-panels>.output{grid-area:1/1;transition:opacity .25s ease,visibility .25s}
+#q11 .audit-method>.small-label{margin:0 0 14px}
+#q11 .audit-panels>.output{margin:0;padding:0;border:0;font-size:17px;line-height:1.5;opacity:0;visibility:hidden}
+#q11 .audit-panels>.output>span{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 14px}
+#q11[data-audit-step="1"] .audit-method{opacity:0;visibility:hidden}
+#q11[data-audit-step="1"] .audit-panels>.output{opacity:1;visibility:visible}
+@media(prefers-reduced-motion:reduce){#q11 .audit-panels>*{transition:none}}
+.motion-off #q11 .audit-panels>*{transition:none}
+@media print{#q11 .audit-panels{display:block}#q11 .audit-panels>.audit-method,#q11 .audit-panels>.output{opacity:1;visibility:visible}#q11 .audit-panels>.output{margin-top:20px}}
+
+@media(min-width:1000px) and (max-height:800px){#q11 .audit-panels>.output{font-size:14px}}
+
+/* Governance: one council diagram and one concise explanation, without duplicate rows. */
+#kooth .governance-summary{font-size:clamp(18px,1.8vw,24px);line-height:1.45;max-width:52ch;margin-top:24px}
+#kooth .kooth-grid{gap:7%;margin-top:28px;align-items:start}
+#kooth .kooth-actions>div{padding-top:8px;padding-bottom:10px}
+#kooth .kooth-actions b{font-size:17px}
+#kooth .kooth-actions p{margin-top:4px;font-size:14px;line-height:1.5}
+#kooth .kooth-actions .governance-proof{margin-top:16px;font-size:12px;max-width:58ch}
+@media(min-width:1000px) and (max-height:800px){#kooth{padding-top:28px}#kooth .section-top{padding-bottom:22px}#kooth h2.q{font-size:34px;max-width:30ch}#kooth .governance-summary{margin-top:18px;font-size:19px}#kooth .kooth-grid{margin-top:22px}#kooth .council-diagram{height:240px}#kooth .kooth-actions a{margin-top:8px}}
+@media(max-width:600px){#kooth .kooth-grid{gap:28px}}
+
+/* Three held governance beats, sharing the existing scroll and arrow state. */
+.narrative-live #kooth{height:280vh!important}
+#kooth .kooth-actions>[data-reveal-step]{padding:8px 14px 10px;border-left:2px solid transparent;transform:none;transition:background .25s,border-color .25s}
+.narrative-live #kooth .kooth-actions>[data-reveal-step]{transform:none;padding-left:14px;border-left-color:transparent}
+.narrative-live #kooth .kooth-actions>[data-reveal-step].current{background:#0c66d0;border-left-color:#a7d1ff;border-bottom-color:#6da7eb}
+.narrative-live #kooth .kooth-actions>.current p{color:#fff}
+@media(min-width:1000px) and (max-height:800px){#kooth .narrative-stage{padding-top:28px;padding-bottom:80px}}
+@media(prefers-reduced-motion:reduce){#kooth .kooth-actions>[data-reveal-step]{transition:none}}
+
+/* A slow continuous orbit. People and decision text remain stationary. */
+#kooth .council-diagram:before{display:none}
+#kooth .council-orbit{position:absolute;left:50%;top:50%;width:min(64%,240px);aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none;z-index:-1}
+#kooth .council-orbit svg{display:block;width:100%;height:100%;overflow:visible}
+#kooth .council-orbit-track{fill:none;stroke:#8caecb;stroke-width:1;opacity:.65}
+#kooth .council-orbit-turn{transform-origin:120px 120px;transform:rotate(-70deg);animation:council-orbit 14s linear infinite}
+#kooth .council-orbit-arc{fill:none;stroke:#77bbff;stroke-width:3;stroke-linecap:round;stroke-dasharray:92 562}
+#kooth .council-orbit-dot{fill:#e0f2ff;stroke:#0c66d0;stroke-width:2}
+.narrative-live #kooth .role-design,.narrative-live #kooth .role-research{transform:translateX(-50%)}
+.narrative-live #kooth .role-tech,.narrative-live #kooth .role-access{transform:none}
+#kooth .council-connections path{stroke-dashoffset:0}
+@media(prefers-reduced-motion:reduce){#kooth .council-orbit-turn{animation:none;transition:none;transform:rotate(-70deg)}}
+.motion-off #kooth .council-orbit-turn{animation:none;transition:none;transform:rotate(-70deg)}
+@media print{#kooth .council-orbit-turn{animation:none;transition:none;transform:rotate(-70deg)}}
+@media(min-width:1000px){#kooth .council-diagram{transform:translateY(10px) scale(1.1);transform-origin:50% 0}}
+/* A restrained focus lift for the active governance point. */
+#kooth .kooth-actions>[data-reveal-step]{position:relative;transform-origin:left center;transition:background .25s,border-color .25s,transform .55s cubic-bezier(.22,.61,.36,1),box-shadow .55s}
+.narrative-live #kooth .kooth-actions>[data-reveal-step].current{transform:scale(1.035);z-index:1;box-shadow:0 8px 20px #0002}
+@media(prefers-reduced-motion:reduce){#kooth .kooth-actions>[data-reveal-step]{transition:none}}
+.motion-off #kooth .kooth-actions>[data-reveal-step]{transition:none;transform:none;box-shadow:none}
+
+/* Hold each part of the leadership update as a separate narrative beat. */
+.narrative-live #q42{height:340vh!important}
+#q42 .roi strong{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
+#q42 .roi strong [data-reveal-step]{color:#d9e7f5;transition:color .25s}
+#q42 .roi strong i{font-style:normal;color:#a8bed3}
+.narrative-live #q42 .roi strong .current{color:#ffe36b}
+@media(min-width:1000px) and (max-height:800px){#q42 .narrative-stage{padding-top:28px;padding-bottom:85px}#q42 .section-top{padding-bottom:22px}#q42 h2.q{font-size:34px;max-width:34ch}#q42 .qa-grid{margin-top:20px}#q42 .solution ol>li{padding-top:8px;padding-bottom:8px}#q42 .roi{margin-top:20px;padding:18px 22px}}
+@media(prefers-reduced-motion:reduce){#q42 .roi strong [data-reveal-step]{transition:none}}
+/* A contained studio report explains product, brand, and delivery variation. */
+.narrative-live #q32{height:340vh!important}
+#q32 h2.q{font-size:clamp(34px,3.4vw,50px);max-width:35ch}
+.scaling-layout{display:grid;grid-template-columns:42% 58%;align-items:center;gap:0;margin-top:22px}
+.scaling-copy{position:relative;z-index:2}
+.scaling-copy>.large-body{font-size:clamp(19px,1.65vw,24px);line-height:1.5;margin-top:12px;max-width:32ch}
+.scaling-stops{display:grid;gap:8px;margin-top:24px}
+.scaling-stops button{text-align:left;border:1px solid #bacddd;background:transparent;padding:14px 16px;color:#0b2545;transition:background .25s,color .25s,border-color .25s}
+.scaling-stops strong{display:block;font-size:16px;font-weight:600}
+.scaling-stops span{display:block;font-size:14px;line-height:1.5;margin-top:3px}
+.scaling-stops button[aria-pressed=true]{background:#0b2545;color:#f3fafb;border-color:#0b2545}
+.scaling-visual{min-width:0;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.scaling-visual .model-stage{height:clamp(350px,48vh,530px);width:100%}
+.scaling-caption{text-align:center;font-size:14px;color:#0b2545;margin-top:4px}
+.scaling-visual figcaption{text-align:center;font-size:10px;color:#466076;margin:8px auto 0;max-width:45ch;line-height:1.5}
+@media(min-width:1000px) and (max-height:800px){#q32 .narrative-stage{padding-top:28px;padding-bottom:82px}#q32 .section-top{padding-bottom:20px}#q32 h2.q{font-size:32px;max-width:38ch}.scaling-layout{margin-top:18px}.scaling-stops{margin-top:18px;gap:6px}.scaling-stops button{padding:10px 12px}.scaling-stops span{font-size:13px}.scaling-visual .model-stage{height:345px}}
+@media(max-width:999px){.scaling-layout{grid-template-columns:1fr;gap:24px}.scaling-copy>.large-body{max-width:40ch}.scaling-visual .model-stage{height:390px}.scaling-visual{max-width:650px;width:100%;margin:auto}}
+@media(max-width:600px){#q32 h2.q{font-size:32px}.scaling-visual .model-stage{height:340px}}
+@media(prefers-reduced-motion:reduce){.scaling-stops button{transition:none}}
+@media print{.scaling-layout{grid-template-columns:42% 58%!important}.scaling-visual .model-stage{height:400px}.scaling-visual canvas{display:none!important}.scaling-visual .model-poster{opacity:1!important;visibility:visible!important}}
+/* Fill the model area while leaving room for the larger digital viewer. */
+#q32 .model-stage canvas,#q32 .model-stage .model-poster{transform:scale(1.22);transition:transform .5s ease}
+#q32[data-narrative-step="2"] .model-stage canvas,#q32[data-narrative-step="2"] .model-stage .model-poster{transform:scale(1.12)}
+@media(prefers-reduced-motion:reduce){#q32 .model-stage canvas,#q32 .model-stage .model-poster{transition:none}}
+.motion-off #q32 .model-stage canvas,.motion-off #q32 .model-stage .model-poster{transition:none}
+/* Reduced motion still shows the selected static report pose. */
+@media screen and (prefers-reduced-motion:reduce){#q32 .model-stage.ready canvas{display:block!important}#q32 .model-stage.ready .model-poster{opacity:0!important;visibility:hidden!important}}
+@media screen{body.motion-off #q32 .model-stage.ready canvas{display:block}body.motion-off #q32 .model-stage.ready .model-poster{opacity:0;visibility:hidden}}
+#q32[data-narrative-step="1"] .model-stage canvas,#q32[data-narrative-step="2"] .model-stage canvas{transform-origin:center bottom}
+/* Four held leadership beats: delivery, reuse, evidence, then the next investment. */
+#q42 h2.q{font-size:clamp(32px,3vw,44px);max-width:45ch}
+.roi-beats{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:24px;padding:12px 16px;background:#0b2545;color:#a8bed3}
+.roi-beats button{border:0;background:transparent;padding:6px 8px;color:#d9e7f5;font-size:16px;transition:color .25s}
+.roi-beats button[aria-pressed=true]{color:#ffe36b}
+.roi-beats button:focus-visible{outline-color:#ffe36b}
+.roi-layout{display:grid;grid-template-columns:42% 58%;align-items:center;gap:0;margin-top:10px}
+.roi-premise{font-size:20px;line-height:1.45;margin-top:10px;max-width:28ch}
+.roi-panels{margin-top:28px;min-height:200px}
+.roi-panels h3{font-size:26px;line-height:1.2;max-width:25ch}
+.roi-panels p{font-size:17px;line-height:1.6;max-width:42ch;margin-top:14px}
+.roi-panels .roi-evidence{font-size:13px;color:var(--muted);border-left:2px solid var(--blue);padding-left:14px;margin-top:18px}
+.roi-visual .model-stage{height:clamp(340px,46vh,450px)}
+.roi-visual figcaption{text-align:center;font-size:10px;line-height:1.5;color:#466076;max-width:43ch;margin:8px auto 0}
+@media(min-width:1000px) and (max-height:800px){#q42 h2.q{font-size:32px;max-width:45ch}.roi-beats{margin-top:16px;padding:6px 10px}.roi-visual .model-stage{height:310px}.roi-panels{margin-top:18px;min-height:180px}.roi-premise{font-size:17px}.roi-panels h3{font-size:23px}.roi-panels p{font-size:15px;margin-top:10px}.roi-panels .roi-evidence{font-size:12px;margin-top:12px}}
+@media(max-width:999px){.roi-layout{grid-template-columns:1fr;gap:20px}.roi-panels{min-height:0}.roi-visual .model-stage{height:390px}.roi-visual{max-width:650px;width:100%;margin:auto}}
+@media(max-width:600px){.roi-beats{display:grid;grid-template-columns:1fr 1fr;gap:4px}.roi-beats>span{display:none}.roi-beats button{text-align:left;font-size:14px}.roi-visual .model-stage{height:330px}}
+@media screen and (prefers-reduced-motion:reduce){#q42 .model-stage.ready canvas{display:block!important}#q42 .model-stage.ready .model-poster{opacity:0!important;visibility:hidden!important}}
+@media screen{body.motion-off #q42 .model-stage.ready canvas{display:block}body.motion-off #q42 .model-stage.ready .model-poster{opacity:0;visibility:hidden}}
+@media print{.roi-panels>[hidden]{display:block}.roi-beats{display:none}.roi-layout{grid-template-columns:1fr}.roi-visual{display:none}}
+#q42 .model-stage canvas{transition:opacity .4s,transform .5s ease}
+#q42[data-narrative-step="1"] .model-stage canvas,#q42[data-narrative-step="2"] .model-stage canvas{transform:scale(1.18)}
+.motion-off #q42 .model-stage canvas{transition:none}
+@media(min-width:1000px){#q42[data-narrative-step="1"] .model-stage canvas,#q42[data-narrative-step="2"] .model-stage canvas{transform:scale(1.4)}}
+.roi-visual .model-stage{pointer-events:none}
+/* Keep the closing contact block anchored like the preceding slide. */
+#thanks h2{max-width:26ch}
+#thanks .closing-contact{position:absolute;right:var(--gutter);bottom:100px;display:flex;flex-direction:column;gap:9px;font-size:13px;text-align:left}
+#thanks .closing-contact .pdf-link{margin-top:20px;font-size:11px}
+@media(max-width:600px){#thanks .closing-contact{left:var(--gutter);right:auto;font-size:12px}}
+.presenting #thanks .closing-contact{bottom:135px}
+@media print{#thanks .closing-contact{bottom:35px;right:48px}#thanks .pdf-link{display:none}}
+@media screen and (max-height:760px) and (min-width:901px){#thanks .closing-contact{bottom:85px}}
+@media screen and (max-width:600px){#thanks .closing-contact{right:var(--gutter);bottom:88px}.presenting #thanks .closing-contact{bottom:135px}}
+
+@keyframes council-orbit{from{transform:rotate(-70deg)}to{transform:rotate(290deg)}}
+/* Portfolio evidence arrives with the corresponding part of the introduction. */
+.narrative-live #intro{height:340vh!important}
+#intro .intro-title{font-size:clamp(34px,3.4vw,50px);max-width:33ch}
+.intro-stops{display:flex;gap:8px;margin-top:22px}
+.intro-stops button{padding:8px 14px;border:1px solid #a8c0d5;background:transparent;color:var(--ink);font-size:13px}
+.intro-stops button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#f3fafb}
+.intro-stories{margin-top:26px}
+.intro-story{display:grid;grid-template-columns:39% 61%;align-items:center;min-height:380px;gap:0}
+.intro-story[hidden]{display:none}
+.intro-story-copy{padding-right:34px}
+.intro-story-copy h3{font-size:clamp(25px,2.3vw,34px);line-height:1.18;margin-top:14px}
+.intro-story-copy p:not(.small-label){font-size:17px;line-height:1.65;margin-top:18px;max-width:34ch}
+.intro-story-copy .intro-detail{color:var(--muted);font-size:14px!important}
+.intro-story-copy a{display:inline-block;font-size:12px;margin-top:18px}
+.intro-story-art{padding-left:50px}
+.story-principles{font-size:clamp(32px,4vw,58px);line-height:1.2;letter-spacing:-.04em}
+.intro-story-art>p:last-child{font-size:16px;margin-top:20px;max-width:33ch}
+.intro-case-art{animation:intro-evidence .65s ease-out both}
+.kooth-intro-art{position:relative;padding-bottom:65px;padding-right:40px}
+.intro-case-art img{display:block;width:100%;height:auto;border-radius:6px;box-shadow:0 12px 28px #0b25451a}
+.intro-case-art figcaption{font-size:10px;color:var(--muted);margin-top:7px}
+.kooth-intro-art .intro-secondary{position:absolute;right:0;bottom:0;width:43%}
+.onix-intro-art{display:flex;gap:28px;align-items:center;justify-content:center}
+.onix-intro-art figure{width:195px}
+.onix-intro-art figure:nth-child(2){transform:translateY(14px)}
+.onix-intro-art img{max-height:395px;object-fit:contain}
+.intro-privacy{margin-top:12px;font-size:12px;color:var(--muted)}
+@keyframes intro-evidence{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:1000px) and (max-height:800px){#intro .narrative-stage{padding-top:28px;padding-bottom:85px}#intro .section-top{padding-bottom:22px}#intro .intro-title{font-size:34px}.intro-stops{margin-top:16px}.intro-stories{margin-top:18px}.intro-story{min-height:310px}.intro-story-copy h3{font-size:27px}.intro-story-copy p:not(.small-label){font-size:15px;margin-top:14px}.onix-intro-art img{max-height:330px}.onix-intro-art figure{width:163px}.kooth-intro-art{padding-bottom:50px}}
+@media(max-width:999px){.intro-story{grid-template-columns:1fr;gap:28px;min-height:0}.intro-story-copy{padding-right:0}.intro-story-art{padding-left:0}.intro-case-art{max-width:700px}.intro-privacy{margin-top:28px}}
+@media(max-width:600px){.intro-stops{gap:6px}.intro-stops button{font-size:11px;padding:8px 10px}.intro-story-copy h3{font-size:27px}.kooth-intro-art{padding-right:0;padding-bottom:0}.kooth-intro-art .intro-secondary{position:static;width:65%;margin:18px 0 0 auto}.onix-intro-art{gap:18px}.onix-intro-art figure{width:43%}.onix-intro-art img{max-height:320px}}
+@media(prefers-reduced-motion:reduce){.intro-case-art{animation:none}}
+.motion-off .intro-case-art{animation:none}
+@media print{.intro-stops{display:none}.intro-story[hidden]{display:grid}.intro-story{min-height:0}.intro-stories{margin-top:15px}.intro-story-copy h3{font-size:18px}.intro-story-copy p:not(.small-label){font-size:11px}.intro-case-art{display:none}.intro-story{grid-template-columns:1fr}.intro-story-art{display:none}.intro-privacy{display:block!important}}
+@media(min-width:1000px) and (max-height:800px){.intro-clinical img{max-height:285px;width:auto;max-width:100%;object-fit:contain}}
+/* Quiet outward signals around the shared decision point. */
+#kooth .council-role{background:transparent;color:#fff}
+#kooth .council-role small{color:#e0e8ef}
+#kooth .council-waves{position:absolute;left:50%;top:50%;width:110px;height:110px;transform:translate(-50%,-50%);pointer-events:none;z-index:-1}
+#kooth .council-waves span{position:absolute;inset:0;border:1px solid #9bc9ff;border-radius:50%;opacity:0;animation:council-wave 4.8s ease-out infinite}
+#kooth .council-waves span:nth-child(2){animation-delay:-2.4s}
+@keyframes council-wave{0%{transform:scale(1);opacity:.32}80%{opacity:0}100%{transform:scale(2.15);opacity:0}}
+@media(max-width:900px){#kooth .council-waves{width:90px;height:90px}}
+@media(prefers-reduced-motion:reduce){#kooth .council-waves{display:none}}
+.motion-off #kooth .council-waves{display:none}
+@media print{#kooth .council-waves{display:none}}
+/* Leave breathing room now that the labels no longer mask the orbit. */
+#kooth .council-diagram{margin-top:40px}
+#kooth .role-design{top:-30px}
+#kooth .role-research{bottom:-30px}
+/* Anchor every label twelve pixels beyond the same orbit-sized connectors. */
+#kooth .council-diagram{container-type:inline-size;--council-radius:min(32cqw,120px);--label-gap:12px}
+#kooth .council-connections{inset:auto;left:50%;top:50%;width:min(64%,240px);height:auto;aspect-ratio:1;transform:translate(-50%,-50%)}
+#kooth .council-role{padding:0}
+#kooth .role-design{top:auto;bottom:calc(50% + var(--council-radius) + var(--label-gap));left:50%}
+#kooth .role-research{bottom:auto;top:calc(50% + var(--council-radius) + var(--label-gap));left:50%}
+#kooth .role-tech{right:auto;left:calc(50% + var(--council-radius) + var(--label-gap));top:50%;transform:translateY(-50%)!important;white-space:nowrap}
+#kooth .role-access{left:auto;right:calc(50% + var(--council-radius) + var(--label-gap));top:50%;transform:translateY(-50%)!important;white-space:nowrap}
+@media(max-width:600px){#kooth .council-diagram{--council-radius:28cqw}#kooth .council-orbit,#kooth .council-connections{width:56%}}
+#thanks .thanks-message{display:block;font-style:normal}
+#thanks .thanks-question{display:block;font-style:italic;font-size:.72em;margin-top:.4em}

@@ -5,3 +5,6 @@ Soluna practitioner design: Mike Jerugim / flat7.design/soluna/.
 Pathology slide: original Blender model and rendering created for this presentation. Illustrative, non-diagnostic specimen geometry.
 Three.js: MIT license, bundled license notices included in scene.js.
 Artera name belongs to its owner. This is an interview presentation, not an official Artera product.
+Intro portfolio images: Mike Jerugim / flat7.design. Soluna: assets/07.jpg (practitioner dashboard), assets/04.jpg (summary-placement review). Onix: assets/screen-home.jpg and assets/app-handoff-poster.jpg (mobile app).
+Soluna mobile mockup: 01-Soluna-screenMockups.jpg, supplied by Mike Jerugim for the intro sequence.
+Onix intro expert chat: flat7.design/onix/assets/screen-journey-created.jpg (clean chat screenshot with journey card).
